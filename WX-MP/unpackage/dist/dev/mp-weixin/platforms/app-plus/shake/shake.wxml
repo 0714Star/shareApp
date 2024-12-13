@@ -1,0 +1,1 @@
+<view class="root" style="{{'background-image:' + c}}"><view class="{{[a, 'shake-up']}}"><image mode="aspectFit" src="https://web-assets.dcloud.net.cn/unidoc/zh/shakeup.png"></image></view><view class="{{[b, 'shake-down']}}"><image mode="aspectFit" src="https://web-assets.dcloud.net.cn/unidoc/zh/shakedown.png"></image></view></view>

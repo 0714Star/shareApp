@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: Java
+
+  profiles:
+    active: druid
+    url: jdbc:mysql://localhost:3306/xidian_project_xhy?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=GMT%2b8&allowPublicKeyRetrieval=true
+    username: root
+    password: xidian
+
+  # servlet 最大传输文件限制
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+  # redis 基本配置
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+
+server:
+  port: 24123
+
+# Mybatis 配置
+mybatis:
+  # 实体类包路径
+  type-aliases-package: com.jxufe_yzt.java.entity # 存放实体类
+  # 映射文件
+  mapper-locations:  classpath:mappers/*.xml # resources/mappers/*.xml # 如果不写xml方式 直接注释
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 后台输出
+    map-underscore-to-camel-case: true
+
+
+ip: localhost # 服务器 ip
