@@ -7,11 +7,13 @@ import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import java.io.Serializable;
 import java.util.Date;
 
 @Data
 @Table(name = "user_test")
-public class UserTest {
+public class UserTest implements Serializable {
+    private static final long serialVersionUID = 1L; // 可序列化
 
     @Id
     @KeySql(useGeneratedKeys = true) // 主键回填 : 更新后返回给java
@@ -35,17 +37,17 @@ public class UserTest {
     @Transient // import javax.persistence.Transient;
     private String SessionKey;
 
-    @Override
-    public String toString() {
-        return "UserTest{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", age=" + age +
-                ", birthday=" + birthday +
-                ", sex='" + sex + '\'' +
-                ", note='" + note + '\'' +
-                ", SessionKey='" + SessionKey + '\'' +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "UserTest{" +
+//                "id=" + id +
+//                ", username='" + username + '\'' +
+//                ", password='" + password + '\'' +
+//                ", age=" + age +
+//                ", birthday=" + birthday +
+//                ", sex='" + sex + '\'' +
+//                ", note='" + note + '\'' +
+//                ", SessionKey='" + SessionKey + '\'' +
+//                '}';
+//    }
 }

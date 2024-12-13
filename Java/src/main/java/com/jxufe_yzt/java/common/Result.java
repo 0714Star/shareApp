@@ -8,8 +8,7 @@ import lombok.Setter;
  * @author yzt
  * @time 2024-12-13-14:38
  */
-@Getter
-@Setter
+
 public class Result {
     private String code;
     private String msh;
@@ -57,5 +56,27 @@ public class Result {
         return tResult;
     }
 
+    public String getCode() {
+        return code;
+    }
 
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getMsh() {
+        return msh;
+    }
+
+    public void setMsh(String msh) {
+        this.msh = msh;
+    }
+
+    public Object getData() {
+        return data;
+    }
+
+    public void setData(Object data) {
+        this.data = data;
+    }
 }
