@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "media-info": "../media-info/index",
+    "media-filter": "../media-filter/index",
+    "media-list": "../media-list/index",
+    "uni-icons": "../../../uni-icons/components/uni-icons/uni-icons"
+  }
+}

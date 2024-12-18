@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "media-panel": "../media-panel/index",
+    "image-library-panel": "../image-library-panel/index",
+    "free-media-button": "./free-media-button"
+  }
+}

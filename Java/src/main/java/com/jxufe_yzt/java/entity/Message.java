@@ -2,6 +2,7 @@ package com.jxufe_yzt.java.entity;
 
 import lombok.Data;
 
+import javax.persistence.Table;
 import java.util.Date;
 
 /**
@@ -10,11 +11,12 @@ import java.util.Date;
  * @time 2024-12-14-07:30
  */
 @Data
+@Table(name = "message_private")
 public class Message {
     // 消息发起者
-    private String from;
+    private Integer from_id;
     // 消息接收者
-    private String to;
+    private Integer to_id;
     // 消息内容
     private String content;
     // 消息创建时间

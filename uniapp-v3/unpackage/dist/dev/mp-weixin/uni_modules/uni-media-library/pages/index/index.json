@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "媒体库",
+  "usingComponents": {
+    "uni-media-library": "../../components/uni-media-library/uni-media-library"
+  }
+}

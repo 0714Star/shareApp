@@ -1,0 +1,9 @@
+{
+    "name": "quill-delta-converter",
+    "description": "quill编辑器delta格式转换器",
+    "main": "index.js",
+    "origin-plugin-dev-name": "uni-cms",
+    "origin-plugin-version": "1.0.20",
+    "plugin-dev-name": "uni-cms",
+    "plugin-version": "1.0.20"
+}

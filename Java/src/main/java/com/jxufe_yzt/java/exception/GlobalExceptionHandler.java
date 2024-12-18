@@ -29,7 +29,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(CustomException.class)
     @ResponseBody // 返回 JSON 串
     public Result customError(HttpServletRequest request, CustomException e) {
-
+        log.error("可标记异常",e);
         return Result.error(e.getCode(), e.getMessage());
     }
 }

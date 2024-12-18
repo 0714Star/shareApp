@@ -1,0 +1,1 @@
+<view class="{{['rich-text-box', c && 'show-cursor']}}" ref="rich-text-box"><rich-text wx:if="{{a}}" space="nbsp" nodes="{{b}}"></rich-text></view>

@@ -1,0 +1,1 @@
+<toolbar-tool wx:if="{{c}}" u-s="{{['d']}}" bindchange="{{b}}" u-i="0edfc29e-0" bind:__l="__l" u-p="{{c}}"><uni-icons wx:if="{{a}}" u-i="0edfc29e-1,0edfc29e-0" bind:__l="__l" u-p="{{a}}"></uni-icons></toolbar-tool>

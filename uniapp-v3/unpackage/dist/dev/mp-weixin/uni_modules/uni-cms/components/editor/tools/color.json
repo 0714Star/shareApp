@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "toolbar-tool": "./base",
+    "color-picker": "./color-picker",
+    "uni-icons": "../../../../uni-icons/components/uni-icons/uni-icons"
+  }
+}

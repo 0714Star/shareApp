@@ -1,0 +1,1 @@
+<toolbar-tool wx:if="{{c}}" u-s="{{['d']}}" bindchange="{{b}}" u-i="1d2bda16-0" bind:__l="__l" u-p="{{c}}"><view style="width:24px;height:24px">{{a}}</view></toolbar-tool>

@@ -19,7 +19,10 @@ public class WebMVCConifg implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(jwtInterceptor).addPathPatterns("/**")
-                .excludePathPatterns("/login");
+                .excludePathPatterns("/login")
+                .excludePathPatterns("/userTest/**")
+//                .excludePathPatterns("/wxAuth/*")
+        ;
         ;
     }
 }

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "分类列表",
+  "usingComponents": {
+    "uni-dateformat": "../../../../uni-dateformat/components/uni-dateformat/uni-dateformat",
+    "unicloud-db": "../../../../../node-modules/@dcloudio/uni-components/lib/unicloud-db/unicloud-db"
+  }
+}

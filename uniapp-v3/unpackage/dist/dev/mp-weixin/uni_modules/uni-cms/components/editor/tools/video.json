@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "toolbar-tool": "./base",
+    "uni-icons": "../../../../uni-icons/components/uni-icons/uni-icons",
+    "uni-media-library": "../../../../uni-media-library/components/uni-media-library/uni-media-library",
+    "uni-drawer": "../../../../uni-drawer/components/uni-drawer/uni-drawer"
+  }
+}

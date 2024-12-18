@@ -1,10 +1,6 @@
 package com.jxufe_yzt.java.common.config;
 
-import org.apache.catalina.filters.CorsFilter;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.reactive.UrlBasedCorsConfigurationSource;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -33,9 +29,10 @@ public class CorsConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**") // 匹配所有路径
                 .allowedOriginPatterns("*") // 支持所有域
-//                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // 支持的方法
-                .allowedMethods("*")
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // 支持的方法
+//                .allowedMethods("*")
                 .allowedHeaders("*") // 支持的请求头
                 .allowCredentials(true); // 是否允许发送 Cookie
     }
+
 }

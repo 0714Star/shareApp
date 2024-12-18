@@ -1,0 +1,10 @@
+
+app:
+  default:
+    avatar: http://localhost:24123/static/xbb.jpg
+
+wx:
+  appId: wxfcbd5b40cb6c29a2
+  secretId: c38ecd6226a0cb412a941afc674095ed
+  tokenSecretKey: 20030714@Xhy
+  standardTokenTimes: 86400000 # 3600 *1000 1h *24  天

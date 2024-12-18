@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "uni-icons": "../../../uni-icons/components/uni-icons/uni-icons",
+    "unicloud-db": "../../../../node-modules/@dcloudio/uni-components/lib/unicloud-db/unicloud-db"
+  }
+}

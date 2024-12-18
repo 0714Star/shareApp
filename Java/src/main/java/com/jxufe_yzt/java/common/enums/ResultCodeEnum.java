@@ -5,7 +5,8 @@ public enum ResultCodeEnum {
     SUCCESS ("200","成功"),
     PARAM_ERROR("400","请求参数异常"),
     TOKEN_CHECK_ERROR("401","未授权（需要身份验证）"),
-    PERMISSION_DENIED("402","资源未找到"),
+    PASSWORD_ERROR("402","密码错误 | 小程序临时凭证失效"),
+    PERMISSION_DENIED("404","资源未找到"),
     SYSTEM_ERROR("500","服务器内部异常"),
     SERVER_DIE("502","网关错误")
 

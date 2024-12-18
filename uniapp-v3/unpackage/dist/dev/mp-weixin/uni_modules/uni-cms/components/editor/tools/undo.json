@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "toolbar-tool": "./base",
+    "uni-icons": "../../../../uni-icons/components/uni-icons/uni-icons"
+  }
+}

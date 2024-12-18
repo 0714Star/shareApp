@@ -1,0 +1,1 @@
+<uni-list wx:for="{{a}}" wx:for-item="item" u-s="{{['d']}}" u-i="{{item.d}}" bind:__l="__l"><uni-list-chat wx:if="{{item.c}}" bindclick="{{item.a}}" u-i="{{item.b}}" bind:__l="__l" u-p="{{item.c}}"/></uni-list>
