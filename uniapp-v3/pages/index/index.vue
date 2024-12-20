@@ -16,6 +16,13 @@
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue';
+onMounted(()=>{
+	wx.openAppAuthorizeSetting({
+	  success (res) {
+	    console.log(res)
+	  }
+	})
+})
 
 
 </script>

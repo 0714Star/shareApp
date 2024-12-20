@@ -1,1 +1,1 @@
-<view> this is home </view>
+<view> this is home <button type="default" bindtap="{{a}}">清除登录状态</button></view>

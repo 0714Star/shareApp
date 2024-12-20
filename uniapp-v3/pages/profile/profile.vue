@@ -2,8 +2,8 @@
   <view class="profile-container">
     <!-- 用户信息卡片 -->
     <view class="card user-info-card">
-      <image class="avatar" :src="userData.avatar" mode="aspectFill"></image>
-      <text class="username">{{userData.nickName}}</text>
+      <image class="avatar" :src="userData?.avatar" mode="aspectFill"></image>
+      <text class="username">{{userData?.nickName}}</text>
     </view>
 
     <!-- 预留的业务逻辑卡片 -->
@@ -28,20 +28,26 @@ import {getUserdata} from '@/utils/api/wxLogin.js'
 import {userInfo} from "@/utils/api/interface"
 
 let userData:userInfo = reactive(getUserdata());
-
-onMounted (()=>{
+uni.$on("updateUserInfo",()=>{
+	checkState();
+})
+function checkState(){
 	// 如果本地没有token 自动跳转到登录界面
-  // #ifdef MP
-  const userData = getUserdata();
-  const token :string= userData?.token;
-  console.log("userData is :",userData);
-  // 如果本地没有token 自动跳转到登录界面
-  if (!token) {
-    uni.navigateTo({
-      url: "/pages/profile/wxLogin/wxLogin"  // 假设你的登录页路径为 /pages/login/login
-    });
-  }
-  // #endif
+	// #ifdef MP
+	const userData = getUserdata();
+	const token :string= userData?.token;
+	console.log("userData is :",userData);
+	// 如果本地没有token 自动跳转到登录界面
+	if (!token) {
+	  uni.navigateTo({
+	    url: "/pages/profile/wxLogin/wxLogin"  // 假设你的登录页路径为 /pages/login/login
+	  });
+	}
+	// #endif
+}
+uni.onAppShow(()=>{
+	console.log("!!!!!!!!!!!!!!!Activated!!!!!!!!!!!!!!!")
+	checkState()
 })
 </script>
 

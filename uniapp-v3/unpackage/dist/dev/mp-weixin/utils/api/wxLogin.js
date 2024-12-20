@@ -10,6 +10,7 @@ const getUserdata = () => {
 };
 const clearUserData = () => {
   common_vendor.index.setStorageSync("user-info", null);
+  common_vendor.index.$emit("updateUserInfo");
 };
 exports.clearUserData = clearUserData;
 exports.getUserdata = getUserdata;

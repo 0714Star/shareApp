@@ -13,4 +13,5 @@ export const getUserdata = ()=>{
 
 export const clearUserData = ()=>{
 	uni.setStorageSync("user-info",null)
+	uni.$emit("updateUserInfo")
 }

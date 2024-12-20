@@ -22,18 +22,18 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
         username: "熊浩毅",
         nickname: "熊bb",
         userid: 1,
-        avatar: "http://localhost:24123/images/xbb.jpg",
+        avatar: "http://192.168.123.203:24123/images/xbb.jpg",
         time: "2024-12-16 22:45",
-        endMessage: "你还在生气嘛，叶不丢QAQ",
+        endMessage: "你好",
         unreadnumber: 1
       },
       {
         username: "叶子彤",
         nickname: "小彤饱饱",
         userid: 2,
-        avatar: "http://localhost:24123/images/xtbb.jpg",
+        avatar: "http://192.168.123.203:24123/images/xtbb.jpg",
         time: "2024-12-16 22:44",
-        endMessage: "对不起，我不该一心二用还对你那样",
+        endMessage: "你好！41",
         unreadnumber: 12
       }
     ];
