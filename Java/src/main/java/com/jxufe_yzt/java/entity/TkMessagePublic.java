@@ -25,6 +25,8 @@ public class TkMessagePublic implements Serializable {
     @Id
     @KeySql(useGeneratedKeys = true) // 主键回填 : 更新后返回给java
     private Long fromId;
+    /** 消息类型ID */
+    private Integer messageTypeId;
     /** 发送时间 */
     private Date createTime;
     /** 消息内容 */
@@ -35,6 +37,14 @@ public class TkMessagePublic implements Serializable {
     private String fromUserProfile;
     /** 引用的消息ID */
     private Long parentMessageId;
+
+    public Integer getMessageTypeId() {
+        return messageTypeId;
+    }
+
+    public void setMessageTypeId(Integer messageTypeId) {
+        this.messageTypeId = messageTypeId;
+    }
 
     public Long getMessageId() {
         return messageId;

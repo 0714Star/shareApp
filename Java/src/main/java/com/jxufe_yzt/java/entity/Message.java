@@ -26,6 +26,6 @@ public class Message {
     // 消息用户头像
     private String fromUserProfile;
     // 消息类型ID
-    private Integer messageTypeId;
+//    private Integer messageTypeId;
 
 }

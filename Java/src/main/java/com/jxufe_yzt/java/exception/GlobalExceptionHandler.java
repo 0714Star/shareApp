@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @author yzt
  * @time 2024-12-13-16:44
  */
-@ControllerAdvice(basePackages = "com.jxufe_yzt_java.controller")
+@ControllerAdvice(basePackages = "com.jxufe_yzt.java.controller")
 public class GlobalExceptionHandler {
     
     private static final Log log = LogFactory.get();
@@ -26,6 +26,7 @@ public class GlobalExceptionHandler {
         log.error("异常信息",e);
         return Result.error();
     }
+
     @ExceptionHandler(CustomException.class)
     @ResponseBody // 返回 JSON 串
     public Result customError(HttpServletRequest request, CustomException e) {

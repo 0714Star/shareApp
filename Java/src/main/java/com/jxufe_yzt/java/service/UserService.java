@@ -59,13 +59,13 @@ public class UserService {
     public void delete (User user) {
         userMapper.delete(user);
     }
-    public void delete(Integer userId) {
+    public void delete(Long userId) {
         userMapper.deleteByPrimaryKey(userId);
     }
     public void update(User user) {
         userMapper.updateByPrimaryKeySelective(user);
     }
-    public User selectById(Integer userId) {
+    public User selectById(Long userId) {
         return userMapper.selectByPrimaryKey(userId);
     }
 }

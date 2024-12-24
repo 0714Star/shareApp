@@ -21,10 +21,10 @@ public interface TkTalkListMapper extends Mapper<TkTalkList> {
             " order by update_time desc;")
     List<TkTalkList> selectMyGroupList(Integer userId);
 
-    /**
-     * 查询用户的消息列表
-     * @param userId
-     * @return
-     */
-    List<TkTalkList> selectMyList(@Param("userId") Integer userId);
+//    /**
+//     * 查询用户的消息列表
+//     * @param userId
+//     * @return
+//     */
+//    List<TkTalkList> selectMyList(@Param("userId") Integer userId);
 }

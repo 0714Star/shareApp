@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+import store from '@/store'
 // 动态设置 IP，根据平台使用不同的 URL
 const ip = 'http://192.168.123.203:24123'; // 可根据需求动态切换
 axios.defaults.baseURL = ip;
@@ -31,20 +31,26 @@ instance.interceptors.request.use(
 // 响应拦截器
 instance.interceptors.response.use(
   (response) => {
+	  console.log("resp! ")
     // 返回响应数据
+	if(response.data.code == "200")
     return response.data;
+	else if(response.data.code == "401"){
+		// store.dispatch("userModule/autoLogin"); // 自动登录
+	}
   },
   (error) => {
+	  console.log("error! ")
     // 错误处理
     if (error.response) {
-      switch (error.response.status) {
-        case 401:
+      switch (error.response.code) {
+        case "401":
           // 认证失败，跳转到登录页面
           uni.navigateTo({
             url: '/pages/profile/wxLogin/wxLogin',
           });
           break;
-        case 500:
+        case "500":
           // 服务器错误
           uni.showToast({
             title: '服务器错误，请稍后重试',

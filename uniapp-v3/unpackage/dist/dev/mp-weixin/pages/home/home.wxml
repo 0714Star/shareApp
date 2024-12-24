@@ -1,1 +1,1 @@
-<view> this is home <button type="default" bindtap="{{a}}">清除登录状态</button></view>
+<view> this is home <button type="success" bindtap="{{a}}"> 点击连接服务器</button><button type="default" bindtap="{{b}}">清除登录状态</button><button type="success" bindtap="{{c}}"> 点击发送消息</button><button type="success" bindtap="{{d}}"> 验证是否登录</button><button type="success" bindtap="{{e}}"> 测试请求</button></view>

@@ -11,6 +11,7 @@
     "minified": false,
     "newFeature": true,
     "bigPackageSizeSupport": true,
+    "ignoreUploadUnusedFiles": true,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
@@ -18,7 +19,7 @@
     }
   },
   "compileType": "miniprogram",
-  "libVersion": "2.25.3",
+  "libVersion": "3.7.2",
   "appid": "wxfcbd5b40cb6c29a2",
   "projectname": "Life Chips 生活拼图",
   "condition": {},

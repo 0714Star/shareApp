@@ -24,6 +24,8 @@ public class TkMessagePrivate implements Serializable {
     /** 接收者ID */
     @Id
     private Long toId;
+    /** 消息类型ID */
+    private Integer messageTypeId;
     /** 消息内容 */
     private String content;
     /** 创建时间 */
@@ -32,6 +34,14 @@ public class TkMessagePrivate implements Serializable {
     private String fromNickname;
     /** 发送者用户头像 */
     private String fromUserProfile;
+
+    public Integer getMessageTypeId() {
+        return messageTypeId;
+    }
+
+    public void setMessageTypeId(Integer messageTypeId) {
+        this.messageTypeId = messageTypeId;
+    }
 
     public Long getMessageId() {
         return messageId;

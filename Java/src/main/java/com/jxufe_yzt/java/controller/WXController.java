@@ -4,7 +4,9 @@ import cn.hutool.core.date.DatePattern;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.ObjectUtil;
 import com.jxufe_yzt.java.common.Result;
+import com.jxufe_yzt.java.common.enums.ResultCodeEnum;
 import com.jxufe_yzt.java.entity.User;
+import com.jxufe_yzt.java.exception.CustomException;
 import com.jxufe_yzt.java.service.UserService;
 import com.jxufe_yzt.java.service.WXService;
 import com.jxufe_yzt.java.utils.TokenUtil;
@@ -50,7 +52,7 @@ public class WXController {
     }
 
     @GetMapping("/test")
-    public Result test() {
-        return Result.success();
+    public Result test()  {
+        throw new CustomException(ResultCodeEnum.TOKEN_CHECK_ERROR);
     }
 }

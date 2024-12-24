@@ -25,66 +25,22 @@
 
 
 <script setup>
-	function sendMessage(){
-		
+import store from '@/store'
+import {iMessagePrivate} from '@/utils/api/interface'
+
+// 获取 当前用户的消息列表 
+
+function sendMessage(){
+	let message  = {
+		from_id : 1,
+		to_id: 2,
+		content : "你好，我正在发送消息",
+		from_nickname:"小熊bb",
+		from_user_profile:"/images/xxbb.jpg",
 	}
-	
-/*
-import { ref, onMounted, onBeforeUnmount } from 'vue';
+	store.state.stomp.send("/ws/chat",{} ,JSON.stringify(message));
+}
 
-// 消息列表和输入消息内容
-const messages = ref([
-  { type: 'received', content: '你好，有什么需要帮助的吗？' },
-  { type: 'sent', content: '你好，我想问一下这个功能怎么用？' },
-]);
-const newMessage = ref('');
-let websocket = null;
-
-// WebSocket 连接函数
-const connectWebSocket = () => {
-  websocket = new WebSocket('ws://127.0.0.1:24123/chat');
-
-  websocket.onopen = () => {
-    console.log('WebSocket 已连接');
-  };
-
-  websocket.onmessage = (event) => {
-    const data = JSON.parse(event.data);
-    if (data && data.content) {
-      messages.value.push({ type: 'received', content: data.content });
-    }
-  };
-
-  websocket.onclose = () => {
-    console.log('WebSocket 已关闭，尝试重连...');
-    setTimeout(connectWebSocket, 5000); // 自动重连
-  };
-
-  websocket.onerror = (error) => {
-    console.error('WebSocket 错误:', error);
-  };
-};
-
-// 发送消息函数
-const sendMessage = () => {
-  if (newMessage.value.trim() !== '' && websocket && websocket.readyState === WebSocket.OPEN) {
-    const message = { type: 'sent', content: newMessage.value };
-    messages.value.push(message);
-    websocket.send(JSON.stringify(message));
-    newMessage.value = '';
-  }
-};
-
-onMounted(() => {
-  connectWebSocket();
-});
-
-onBeforeUnmount(() => {
-  if (websocket) {
-    websocket.close();
-  }
-});
-*/
 </script>
 
 <style>

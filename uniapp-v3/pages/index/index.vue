@@ -17,11 +17,9 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 onMounted(()=>{
-	wx.openAppAuthorizeSetting({
-	  success (res) {
-	    console.log(res)
-	  }
-	})
+	// 检查是否登录
+
+	
 })
 
 

@@ -1,28 +1,34 @@
 import App from './App'
+import store from '@/store/index.js'
 
 // #ifndef VUE3
 import Vue from 'vue'
 import './uni.promisify.adaptor'
 Vue.config.productionTip = false
+Vue.prototype.$store = store
 App.mpType = 'app'
+
+
+
 const app = new Vue({
+	store,
   ...App
 })
 app.$mount()
 // #endif
+
+
 // #ifdef VUE3
 import { createSSRApp } from 'vue'
 
 export function createApp() {
   const app = createSSRApp(App)
-  // 将 axios 挂载到 Vue 3 应用的全局配置上
-  // import axios from 'src/utils/axios.js'
-  // app.config.globalProperties.$axios = axios;
+  app.config.globalProperties.$store = store;
+  app.use(store)
+  // 添加 onLaunch 钩子函数
+
   return {
-    app
+    app,
   }
 }
-
-// app.$ip = "localhost"
-// 设置全局变量
 // #endif

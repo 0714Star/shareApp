@@ -1,5 +1,6 @@
 "use strict";
 const common_vendor = require("../../common/vendor.js");
+require("../../store/index.js");
 const ip = "http://192.168.123.203:24123";
 common_vendor.axios.defaults.baseURL = ip;
 common_vendor.axios.defaults.headers.common["Content-Type"] = "application/json";
@@ -21,17 +22,22 @@ instance.interceptors.request.use(
 );
 instance.interceptors.response.use(
   (response) => {
-    return response.data;
+    console.log("resp! ");
+    if (response.data.code == "200")
+      return response.data;
+    else if (response.data.code == "401")
+      ;
   },
   (error) => {
+    console.log("error! ");
     if (error.response) {
-      switch (error.response.status) {
-        case 401:
+      switch (error.response.code) {
+        case "401":
           common_vendor.index.navigateTo({
             url: "/pages/profile/wxLogin/wxLogin"
           });
           break;
-        case 500:
+        case "500":
           common_vendor.index.showToast({
             title: "服务器错误，请稍后重试",
             icon: "none"

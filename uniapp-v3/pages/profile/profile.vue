@@ -24,31 +24,14 @@
 
 <script setup lang="ts">
 import {ref ,onMounted,onActivated, reactive}from 'vue'
-import {getUserdata} from '@/utils/api/wxLogin.js'
-import {userInfo} from "@/utils/api/interface"
+import store from'@/store'
 
-let userData:userInfo = reactive(getUserdata());
-uni.$on("updateUserInfo",()=>{
-	checkState();
-})
-function checkState(){
-	// 如果本地没有token 自动跳转到登录界面
-	// #ifdef MP
-	const userData = getUserdata();
-	const token :string= userData?.token;
-	console.log("userData is :",userData);
-	// 如果本地没有token 自动跳转到登录界面
-	if (!token) {
-	  uni.navigateTo({
-	    url: "/pages/profile/wxLogin/wxLogin"  // 假设你的登录页路径为 /pages/login/login
-	  });
-	}
-	// #endif
+import {userInfo} from "@/utils/api/interface"
+function getUserdata(){
+	return store.state.userModule["userInfo"];
 }
-uni.onAppShow(()=>{
-	console.log("!!!!!!!!!!!!!!!Activated!!!!!!!!!!!!!!!")
-	checkState()
-})
+let userData:userInfo = reactive(getUserdata());
+
 </script>
 
 <style>

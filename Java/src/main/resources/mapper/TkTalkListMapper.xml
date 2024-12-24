@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jxufe_yzt.java.mapper.TkTalkListMapper">
+
+    <sql id="Base_Column_List">
+        from_id,to_id,name,create_by,create_time,talk_type,update_time
+    </sql>
+
+    <select id="selectAll" resultType="com.jxufe_yzt.java.entity.TkTalkList">
+        select
+        <include refid="Base_Column_List" />
+        from tk_talk_list
+        <where>
+            <if test="fromId != null"> and from_id = #{fromId}</if>
+            <if test="toId != null"> and to_id = #{toId}</if>
+            <if test="name != null"> and name like concat('%', #{name}, '%')</if>
+            <if test="createBy != null"> and create_by like concat('%', #{createBy}, '%')</if>
+            <if test="createTime != null"> and create_time = #{createTime}</if>
+            <if test="talkType != null"> and talk_type = #{talkType}</if>
+            <if test="updateTime != null"> and update_time = #{updateTime}</if>
+        </where>
+        order by id desc
+    </select>
+
+    <select id="selectById" resultType="com.jxufe_yzt.java.entity.TkTalkList">
+        select
+        <include refid="Base_Column_List" />
+        from tk_talk_list
+        where id = #{id}
+    </select>
+
+    <delete id="deleteById">
+        delete from tk_talk_list
+        where  id = #{id}
+    </delete>
+
+    <insert id="insert" parameterType="com.jxufe_yzt.java.entity.TkTalkList" useGeneratedKeys="true">
+        insert into tk_talk_list
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="fromId != null">from_id,</if>
+            <if test="toId != null">to_id,</if>
+            <if test="name != null">name,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="talkType != null">talk_type,</if>
+            <if test="updateTime != null">update_time,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="fromId != null">#{fromId},</if>
+            <if test="toId != null">#{toId},</if>
+            <if test="name != null">#{name},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="talkType != null">#{talkType},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+        </trim>
+    </insert>
+
+    <update id="updateById" parameterType="com.jxufe_yzt.java.entity.TkTalkList">
+        update tk_talk_list
+        <set>
+            <if test="fromId != null">
+                from_id = #{fromId},
+            </if>
+            <if test="toId != null">
+                to_id = #{toId},
+            </if>
+            <if test="name != null">
+                name = #{name},
+            </if>
+            <if test="createBy != null">
+                create_by = #{createBy},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="talkType != null">
+                talk_type = #{talkType},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime},
+            </if>
+        </set>
+        where id = #{id} 
+    </update>
+
+</mapper>

@@ -29,10 +29,11 @@ public class CorsConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**") // 匹配所有路径
                 .allowedOriginPatterns("*") // 支持所有域
-                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // 支持的方法
-//                .allowedMethods("*")
+//                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // 支持的方法
+                .allowedMethods("*")
                 .allowedHeaders("*") // 支持的请求头
-                .allowCredentials(true); // 是否允许发送 Cookie
+                .allowCredentials(false)
+        ; // 是否允许发送 Cookie
     }
 
 }

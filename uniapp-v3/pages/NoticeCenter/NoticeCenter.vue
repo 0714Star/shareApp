@@ -14,7 +14,7 @@
 
 <script setup lang="ts">
 import {reactive} from 'vue'
-
+import {iMessagePublic,iMessagePrivate} from '@/utils/api/interface'
 function loadChatDetail(userid : number){
 	let t:number = 12;
 	return t+12;

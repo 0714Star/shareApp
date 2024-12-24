@@ -23,6 +23,5 @@ public class WebMVCConifg implements WebMvcConfigurer {
                 .excludePathPatterns("/userTest/**")
 //                .excludePathPatterns("/wxAuth/*")
         ;
-        ;
     }
 }
